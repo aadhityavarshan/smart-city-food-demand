@@ -1,4 +1,4 @@
-# Smart City Food Demand Prediction
+# Comparing Models
 
 A complete end-to-end machine learning system that predicts daily restaurant demand using synthetic smart‑city data.  
 You get a real ML engineering workflow: ingestion, feature engineering, model training, experiment tracking, API serving, and EDA.
