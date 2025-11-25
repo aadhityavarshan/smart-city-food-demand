@@ -1,19 +1,44 @@
 # Virtual environment
 .venv/
 venv/
-env/
+ENV/
 
-# Python cache
+# Python cache & bytecode
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.pdb
 
-# Data
+# VS Code settings
+.vscode/
+
+# Jupyter / notebooks junk
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# Data folders
 data/raw/*
 data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
 
-# Notebooks
-.ipynb_checkpoints/
+# Logs
+*.log
 
-# Env files
+# Model artifacts
+*.joblib
+*.pkl
+models/
+src/models/*.joblib
+
+# Environment files
 .env
+*.env
+
+# OS / misc junk files
 .DS_Store
+Thumbs.db
+
+# FastAPI reload cache
+__fastapi__/
