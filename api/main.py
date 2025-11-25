@@ -12,10 +12,10 @@ class PredictionRequest(BaseModel):
     rolling_orders_7d: float
     month: int
     day_of_week: int
+    model_name: str = "baseline"
 
 class PredictionResponse(BaseModel):
     predicted_orders: float
-    timestamp: datetime
 
 @app.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest):
@@ -25,9 +25,9 @@ def predict(request: PredictionRequest):
         promo=request.promo,
         rolling_orders_7d=request.rolling_orders_7d,
         month=request.month,
-        day_of_week=request.day_of_week
+        day_of_week=request.day_of_week,
+        model_name=request.model_name
     )
     return PredictionResponse(
         predicted_orders=y,
-        timestamp=datetime.now(datetime.timezone.utc)
     )

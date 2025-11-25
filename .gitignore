@@ -13,11 +13,11 @@ __pycache__/
 # VS Code settings
 .vscode/
 
-# Jupyter / notebooks junk
+# Jupyter notebook junk
 .ipynb_checkpoints/
 notebooks/.ipynb_checkpoints/
 
-# Data folders
+# Data folders (ignore data files, keep folder)
 data/raw/*
 data/processed/*
 !data/raw/.gitkeep
@@ -26,17 +26,18 @@ data/processed/*
 # Logs
 *.log
 
-# Model artifacts
+# Model artifacts (ONLY the saved models, NOT the source files)
 *.joblib
 *.pkl
-models/
-src/models/*.joblib
+
+# DO NOT ignore src/models/*.py (this was your issue)
+# Removed the "models/" line
 
 # Environment files
 .env
 *.env
 
-# OS / misc junk files
+# OS trash
 .DS_Store
 Thumbs.db
 
